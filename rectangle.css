@@ -1,0 +1,56 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0e1538;
+}
+
+.box{
+    height: 400px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden for absolute element work only when the parent container is position relative */
+    position: relative;
+    overflow: hidden;
+
+}
+.box h2{
+    position: relative;
+    color:#fff;
+    font-size: 7em;
+    z-index: 1;
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    height: 500px;
+    width: 100px;
+    background: linear-gradient(#00ccff, #d400d4);
+    animation: animate 4s linear infinite;
+    border-radius: 15px;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    background: #0e1538;
+    inset: 4px;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
